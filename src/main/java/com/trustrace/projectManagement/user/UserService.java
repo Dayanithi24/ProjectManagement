@@ -56,7 +56,7 @@ public class UserService {
             user.setPassword(passwordEncoder.encode(user.getPassword()));
             System.out.println("Encoded Password: " + user.getPassword());
             ur.save(user);
-            LOGGER.info("User saved..");
+            LOGGER.info("User saved ..");
             return "User saved successfully!";
         }
         LOGGER.info("User Already exists!");
@@ -64,11 +64,11 @@ public class UserService {
     }
 
     public boolean isUserPresent(String id){
-        LOGGER.info("Is User Present Entered...");
+        LOGGER.info("Is User Present Entered ...");
         return ur.existsById(id);
     }
     public User updateUser(String id, User user) {
-        LOGGER.info("Updating User Entered...");
+        LOGGER.info("Updating User Entered ...");
         if(isUserPresent(id)){
             User u=getUserById(id);
             u.setName(user.getName());
