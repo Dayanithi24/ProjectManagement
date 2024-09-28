@@ -96,7 +96,7 @@ public class UserService {
         return null;
     }
     public User findByName(String name) {
-        LOGGER.info("Finding By name Entered...");
+        LOGGER.info("Finding By name Entered ...");
         User user = ur.findByName(name);
         if (user != null) {
             System.out.println("User found: " + user.getName());
@@ -107,7 +107,7 @@ public class UserService {
     }
 
     public String deleteUser(String id) {
-        LOGGER.info("Deleting user Entered..");
+        LOGGER.info("Deleting user Entered ..");
         if(isUserPresent(id)){
             ur.deleteById(id);
             return "User deleted successfully!";
