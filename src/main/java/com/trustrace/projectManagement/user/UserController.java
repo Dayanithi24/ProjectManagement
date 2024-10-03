@@ -1,11 +1,14 @@
 package com.trustrace.projectManagement.user;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
+@Tag(name = "User Controller", description = "Actions on user")
 @RestController
 @RequestMapping("/user/")
 public class UserController {
@@ -17,6 +20,7 @@ public class UserController {
         return ResponseEntity.ok(ls);
     }
     @GetMapping("{id}")
+    @Operation(summary = "Get user", description = "Enter ID to get the specific user")
     public ResponseEntity<User> getUser(@PathVariable("id") String id){
         User user=us.getUserById(id);
         return ResponseEntity.ok(user);
